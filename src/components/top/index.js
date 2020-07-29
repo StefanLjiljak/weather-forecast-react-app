@@ -7,7 +7,6 @@ const TopSection = (props) => {
   const [isSelectLocationOpen, setisSelectLocationOpen] = useState(false);
 
   const [locationName, setlocationName] = useState('');
-  console.log(props);
 
   const onLocationNameChange = (e) => {
     setlocationName(e.target.value);
