@@ -25,9 +25,9 @@ function App(props) {
       Axios(URL)
         .then((res) => {
           if (res.data.success === false) {
-            alert('Unknown City or Region');
             setCityName('Belgrade');
             setregion('Central Serbia');
+            alert('Unknown City or Region');
           }
           return res.data;
         })
