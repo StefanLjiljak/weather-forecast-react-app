@@ -1,5 +1,7 @@
 # Weather Forecast React App
 
+https://weather-forecast-react-app.netlify.app/
+
 - svakog dana u svakom pogledu sve vise napredujem :)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
