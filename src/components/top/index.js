@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './style.scss';
 import Weather from './weather';
 import { Manager, Reference, Popper } from 'react-popper';

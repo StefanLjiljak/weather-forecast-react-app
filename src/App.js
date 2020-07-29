@@ -17,8 +17,6 @@ function App(props) {
   const [region, setregion] = useState('Central Serbia');
   const [forcastDays, setforcastDays] = useState({});
 
-  console.log(props);
-
   const updateWeather = () => {
     const URL = `http://api.weatherstack.com/forecast?access_key=${WEATHER_KEY}&query=${cityName}`;
     Axios(URL)
