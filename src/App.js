@@ -25,10 +25,9 @@ function App(props) {
       Axios(URL)
         .then((res) => {
           if (res.data.success === false) {
+            alert('Unknown City or Region');
             setCityName('Belgrade');
             setregion('Central Serbia');
-            alert('Unknown City/Region, Please try again.');
-            return;
           }
           return res.data;
         })
@@ -52,7 +51,7 @@ function App(props) {
     eventEmitter.on('updateWeather', (data) => {
       setCityName(data);
     });
-  }, [cityName]);
+  }, [cityName, props]);
 
   return (
     <>
