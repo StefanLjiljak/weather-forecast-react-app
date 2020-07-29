@@ -17,35 +17,35 @@ function App(props) {
   const [region, setregion] = useState('Central Serbia');
   const [forcastDays, setforcastDays] = useState({});
 
-  const updateWeather = () => {
-    const URL = `http://api.weatherstack.com/forecast?access_key=${WEATHER_KEY}&query=${cityName}`;
-    Axios(URL)
-      .then((res) => {
-        if (res.data.success === false) {
-          setCityName('Belgrade');
-          setregion('Central Serbia');
-          alert('Unknown City/Region, Please try again.');
-          return;
-        }
-        return res.data;
-      })
-      .then((data) => {
-        if (data.request.type === 'LatLon') {
-          setCityName(data.location.name);
-        }
-        setIsLoading(false);
-        setTemp_c(data.current.temperature);
-        setIsDay(data.current.is_day);
-        setText(data.current.weather_descriptions);
-        setIconURL(data.current.weather_icons);
-        setregion(data.location.region);
-        setforcastDays(Object.values(data.forecast)[0].astro);
-      })
-      .catch((err) => console.error(`Can't fetch data from API ${err}`));
-  };
-
   useEffect(() => {
     const { eventEmitter } = props;
+
+    const updateWeather = () => {
+      const URL = `http://api.weatherstack.com/forecast?access_key=${WEATHER_KEY}&query=${cityName}`;
+      Axios(URL)
+        .then((res) => {
+          if (res.data.success === false) {
+            setCityName('Belgrade');
+            setregion('Central Serbia');
+            alert('Unknown City/Region, Please try again.');
+            return;
+          }
+          return res.data;
+        })
+        .then((data) => {
+          if (data.request.type === 'LatLon') {
+            setCityName(data.location.name);
+          }
+          setIsLoading(false);
+          setTemp_c(data.current.temperature);
+          setIsDay(data.current.is_day);
+          setText(data.current.weather_descriptions);
+          setIconURL(data.current.weather_icons);
+          setregion(data.location.region);
+          setforcastDays(Object.values(data.forecast)[0].astro);
+        })
+        .catch((err) => console.error(`Can't fetch data from API ${err}`));
+    };
 
     updateWeather();
 
