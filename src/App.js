@@ -77,7 +77,11 @@ function App(props) {
         </div>
       </div>
       <footer>
-        Stefan Ljiljak &copy; <span>{year}</span>
+        Stefan
+        <span role="img" aria-label=".">
+          😈
+        </span>{' '}
+        Ljiljak &copy; <span>{year}</span>
       </footer>
     </>
   );
