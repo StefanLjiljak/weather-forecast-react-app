@@ -1,6 +1,6 @@
 # Weather Forecast React App
 
-https://weather-forecast-react-app.netlify.app/
+http://weather-forecast-react-app.surge.sh/
 
 - svakog dana u svakom pogledu sve vise napredujem :)
 
